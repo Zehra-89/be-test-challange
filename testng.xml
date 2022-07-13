@@ -1,2 +1,11 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="freenow-be-api-tests" verbose="1"/>
+<suite name="freenow-be-api-tests" verbose="1">
+    <listeners>
+        <listener class-name="com.freenow.testchallenge.listener.TestSuiteListener"/>
+    </listeners>
+<test name="sampletest">
+    <classes>
+        <class name="SampleTest"><methods><include name="firstapitest"/></methods></class>
+    </classes>
+</test>
+</suite>

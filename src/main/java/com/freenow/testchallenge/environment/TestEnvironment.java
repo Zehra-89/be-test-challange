@@ -30,6 +30,10 @@ public class TestEnvironment {
         return testEnvironment;
     }
 
+    public static void initialize(String environment){
+        getEnvironment(environment);
+    }
+
     private TestEnvironment(String environment) {
         log.info("Setting up environment for: " + environment);
         properties = getPropertiesForEnvironment(environment);
