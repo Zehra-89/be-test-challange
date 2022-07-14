@@ -12,34 +12,19 @@ public class TestEnvironment {
 
     private static final Logger log = LogManager.getLogger(TestEnvironment.class);
 
-    @Getter
-    private String baseUrl;
-    @Getter
-    private String postsEndpoint;
-    @Getter
-    private String commentsEndpoint;
-    @Getter
-    private String usersEndpoint;
-    private static TestEnvironment testEnvironment;
-    private final Properties properties;
 
-    public static TestEnvironment getEnvironment(String environment) {
-        if (testEnvironment == null) {
-            testEnvironment = new TestEnvironment(environment);
-        }
-        return testEnvironment;
-    }
+    public static String baseUrl;
+    public static String postsEndpoint;
+    public static String commentsEndpoint;
 
-    public static void initialize(String environment){
-        getEnvironment(environment);
-    }
+    public static String usersEndpoint;
+    private static Properties properties;
 
-    private TestEnvironment(String environment) {
+    public static void initialize(String environment) throws Exception {
         log.info("Setting up environment for: " + environment);
         properties = getPropertiesForEnvironment(environment);
         if (properties == null) {
-            log.error("The test environment '" + environment + "' was not found. Please provide a valid test environment name.");
-            return;
+            throw new Exception("The test environment '" + environment + "' was not found. Please provide a valid test environment name.");
         }
 
         log.info("Loading environment variables:");
@@ -51,7 +36,7 @@ public class TestEnvironment {
         log.info("Environment successfully setup");
     }
 
-    private Properties getPropertiesForEnvironment(String environment) {
+    private static Properties getPropertiesForEnvironment(String environment) {
         Properties _properties;
         String fileName = environment + ".properties";
         log.info("Environment file: " + fileName);
@@ -64,7 +49,7 @@ public class TestEnvironment {
         return _properties;
     }
 
-    private String getValueFor(String key) {
+    private static String getValueFor(String key) {
         String value = properties.getProperty(key);
         log.info(key + ":" + value);
         return value;
