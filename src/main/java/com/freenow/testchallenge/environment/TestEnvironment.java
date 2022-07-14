@@ -1,7 +1,6 @@
 package com.freenow.testchallenge.environment;
 
 import com.freenow.testchallenge.config.APIConfigProvider;
-import lombok.Getter;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

@@ -2,10 +2,28 @@
 <suite name="freenow-be-api-tests" verbose="1">
     <listeners>
         <listener class-name="com.freenow.testchallenge.listener.TestSuiteListener"/>
+        <listener class-name="com.freenow.testchallenge.listener.TestCaseListener"/>
     </listeners>
-<test name="sampletest">
-    <classes>
-        <class name="SampleTest"><methods><include name="firstapitest"/></methods></class>
-    </classes>
-</test>
+    <test name="users">
+        <parameter name="userName" value="Samantha"/>
+
+        <classes>
+            <class name="users.UsersAPITest">
+                <methods>
+                    <include name="verifyUsersResponseIsNotNull"/>
+                    <include name="verifyUniqueRecordIsPresentForGivenUserName"/>
+                    <include name="verifyUserIdIsNotNull"/>
+                    <include name="verifyGivenNameIsPresent"/>
+                    <include name="verifyUserDoesNotExistForInvalidUserName"/>
+                </methods>
+            </class>
+            <class name="posts.PostsAPITest">
+                <methods>
+                    <include name="verifyGetUserId"/>
+                    <include name="verifyGetAllPostsByUserId"/>
+                    <include name="verifyEmptyResponseReturnForInvalidUserId"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
 </suite>
