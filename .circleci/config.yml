@@ -68,13 +68,13 @@ jobs:
           command: mvn clean test -Denvironment=test
 
       - run:
-          name: generating allure report
+          name: Generating allure report
           command: allure generate --clean
           when: always
 
       #copy root directory
       - store_artifacts:
-          path: allure-report/index.html
+          path: allure-report
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
