@@ -1,6 +1,6 @@
 package users.payload;
 
-public class Address{
+public class Address {
     public String street;
     public String suite;
     public String city;

@@ -5,11 +5,11 @@ import org.testng.annotations.DataProvider;
 public class UserDataProvider {
     public static final String USERNAME_DATA_PROVIDER = "username-data-provider";
     public static final String INVALID_USERNAME_DATA_PROVIDER = "invalid-username-data-provider";
-    public static final String INVALID_USER_ID_DATA_PROVIDER ="invalid-user-id-data-provider" ;
+    public static final String INVALID_USER_ID_DATA_PROVIDER = "invalid-user-id-data-provider";
 
-    public static int invalidUserId= -45;
+    public static int invalidUserId = -45;
 
-    public static String userName="Samantha";
+    public static String userName = "Samantha";
 
     @DataProvider(name = USERNAME_DATA_PROVIDER)
     public Object[][] dpValidUserNames() {

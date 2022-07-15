@@ -11,7 +11,7 @@ public class TestCaseListener implements ITestListener {
 
     @Override
     public void onTestStart(ITestResult result) {
-       log.info("Starting Test: " + result.getName());
+        log.info("Starting Test: " + result.getName());
     }
 
     @Override

@@ -24,6 +24,13 @@
                     <include name="verifyEmptyResponseReturnForInvalidUserId"/>
                 </methods>
             </class>
+            <class name="comments.CommentsAPITest">
+                <methods>
+                    <include name="verifyCommentContainsValidEmail"/>
+                    <include name="verifyNoCommentsFoundForInvalidPostId"/>
+                    <include name="verifyCommentsBelongToUserPostId"/>
+                </methods>
+            </class>
         </classes>
     </test>
 </suite>

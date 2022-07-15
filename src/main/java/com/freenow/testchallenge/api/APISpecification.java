@@ -8,9 +8,8 @@ import org.apache.logging.log4j.Logger;
 
 public class APISpecification {
 
-    public static RequestSpecification requestSpec;
-
     private static final Logger log = LogManager.getLogger();
+    public static RequestSpecification requestSpec;
 
     public static void initialize() {
         log.info("Initializing request specifications");
