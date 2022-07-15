@@ -4,7 +4,7 @@
         <listener class-name="com.freenow.testchallenge.listener.TestSuiteListener"/>
         <listener class-name="com.freenow.testchallenge.listener.TestCaseListener"/>
     </listeners>
-    <test name="users">
+    <test name="FreeNowBEChallange" parallel="methods" thread-count="5">
         <parameter name="userName" value="Samantha"/>
 
         <classes>

@@ -28,7 +28,7 @@ public class PostsAPITest {
 
     @Test(dataProvider = UserDataProvider.INVALID_USER_ID_DATA_PROVIDER, dataProviderClass = UserDataProvider.class)
     @Epic("Posts API Tests")
-    @Story("Search for user Posts")
+    @Story("Search for Posts against invalid User")
     @Description("Verify post data should not return for invalid user id")
     public static void verifyEmptyResponseReturnForInvalidUserId(Integer userId) {
         Response postsResponse = PostsEndpoints.getPostResponseByUserId(userId);
@@ -41,7 +41,7 @@ public class PostsAPITest {
 
     @Test
     @Epic("Posts API Tests")
-    @Story("Search for user Posts")
+    @Story("Search for user Posts against valid User")
     @Description("Verify api returns all the posts on given valid user id ")
     public void verifyGetAllPostsByUserId() {
         Response postsResponse = PostsEndpoints.getPostResponseByUserId(userId);

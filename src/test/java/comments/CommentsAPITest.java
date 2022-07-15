@@ -50,6 +50,9 @@ public class CommentsAPITest {
     }
 
     @Test(dataProvider = INVALID_POST_ID_DATA_PROVIDER, dataProviderClass = PostsDataProvider.class)
+    @Epic("Comments API Tests")
+    @Story("Search for Comments for invalid Posts")
+    @Description("Verify comments api should not return any record for invalid post id")
     public void verifyNoCommentsFoundForInvalidPostId(Integer postId) {
         Response commentsResponse = CommentsEndpoints.getCommentsByPostId(postId);
         List<Comments> comments = Arrays.asList(commentsResponse.getBody().as(Comments[].class));
@@ -57,6 +60,9 @@ public class CommentsAPITest {
     }
 
     @Test
+    @Epic("Comments API Tests")
+    @Story("Search for valid email addresses in Comments")
+    @Description("Verify all comments in reponse should belong to given post id")
     public void verifyCommentsBelongToUserPostId() {
         posts.forEach(post -> {
             Integer postId = post.id;

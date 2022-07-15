@@ -35,7 +35,7 @@ public class UsersAPITest {
 
     @Test
     @Epic("Users API Tests")
-    @Story("Search for User Name")
+    @Story("Search for Valid User Name")
     @Description("Verify api should return response on giving valid user name")
     public void verifyUniqueRecordIsPresentForGivenUserName() {
         Response userResponse = UsersEndpoints.getUser(userName);
@@ -46,7 +46,7 @@ public class UsersAPITest {
 
     @Test
     @Epic("Users API Tests")
-    @Story("Search for User Name")
+    @Story("Search for Valid User Name")
     @Description("Verify UserId is not null in user api response")
     public void verifyUserIdIsNotNull() {
         Response userResponse = UsersEndpoints.getUser(userName);
@@ -56,7 +56,7 @@ public class UsersAPITest {
 
     @Test(dataProvider = UserDataProvider.USERNAME_DATA_PROVIDER, dataProviderClass = UserDataProvider.class)
     @Epic("Users API Tests")
-    @Story("Search for User Name")
+    @Story("Search for Valid User Name")
     @Description("Verify given user name is present in the user api response")
     public void verifyGivenNameIsPresent(String userName) {
         Response userResponse = UsersEndpoints.getUser(userName);
@@ -67,7 +67,7 @@ public class UsersAPITest {
 
     @Test(dataProvider = UserDataProvider.INVALID_USERNAME_DATA_PROVIDER, dataProviderClass = UserDataProvider.class)
     @Epic("Users API Tests")
-    @Story("Search for User Name")
+    @Story("Search for Invalid User Name")
     @Description("Verify api should return null response on giving invalid user name")
     public void verifyUserDoesNotExistForInvalidUserName(String userName) {
         Response userResponse = UsersEndpoints.getUser(userName);
