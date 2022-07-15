@@ -26,7 +26,6 @@ public class UsersEndpoints {
                 .get(TestEnvironment.usersEndpoint);
 
     }
-
     public static Integer getUserId(String userName) {
         log.info("Getting Data for User Name:" + userName);
         Response userResponse = given()

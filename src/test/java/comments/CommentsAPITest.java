@@ -2,6 +2,9 @@ package comments;
 
 import com.freenow.testchallenge.validator.EmailValidator;
 import comments.payload.Comments;
+import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Story;
 import io.restassured.response.Response;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -29,7 +32,11 @@ public class CommentsAPITest {
         Integer userId = UsersEndpoints.getUserId(UserDataProvider.userName);
         posts = PostsEndpoints.getPostsByUserId(userId);
     }
+
     @Test
+    @Epic("Comments API Tests")
+    @Story("Search for valid email addresses in Comments")
+    @Description("Verify the email in the user comments are in valid format")
     public void verifyCommentContainsValidEmail() {
         posts.forEach(post -> {
             int postId = post.id;

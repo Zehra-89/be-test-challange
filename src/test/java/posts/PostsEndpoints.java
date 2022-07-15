@@ -20,7 +20,7 @@ public class PostsEndpoints {
         log.info("Getting Data for Posts against User Id:" + userId);
         return given()
                 .spec(APISpecification.requestSpec)
-                .param("userId", userId).log().body()
+                .param("userId", userId)
                 .get(TestEnvironment.postsEndpoint);
     }
 
@@ -28,7 +28,7 @@ public class PostsEndpoints {
         log.info("Getting Data for Posts against User Id:" + userId);
         Response postsResponse = given()
                 .spec(APISpecification.requestSpec)
-                .param("userId", userId).log().body()
+                .param("userId", userId)
                 .get(TestEnvironment.postsEndpoint);
         return Arrays.asList(postsResponse.getBody().as(Post[].class));
 
