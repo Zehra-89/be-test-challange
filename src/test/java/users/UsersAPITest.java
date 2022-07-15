@@ -1,5 +1,6 @@
 package users;
 
+import io.qameta.allure.Description;
 import io.restassured.response.Response;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -15,8 +16,8 @@ import static org.hamcrest.Matchers.greaterThan;
 public class UsersAPITest {
     private static final Logger log = LogManager.getLogger();
     private final String userName = UserDataProvider.userName;
-
     @Test
+    @Description("Verify api should not return null response on giving valid user name")
     public void verifyUsersResponseIsNotNull() {
 
         Response userResponse = UsersEndpoints.getUser(userName);

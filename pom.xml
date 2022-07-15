@@ -35,6 +35,8 @@
                 </configuration>
             </plugin>
         </plugins>
+
+
     </build>
     <dependencies>
         <dependency>
@@ -82,5 +84,11 @@
             <artifactId>rest-assured</artifactId>
             <version>5.1.1</version>
         </dependency>
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-testng</artifactId>
+            <version>2.18.1</version>
+        </dependency>
+
     </dependencies>
 </project>
