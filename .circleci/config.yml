@@ -1,6 +1,8 @@
 # Use the latest 2.1 version of CircleCI pipeline process engine.
 # See: https://circleci.com/docs/2.0/configuration-reference
 version: 2.1
+orbs:
+  allure: ayte/allure@0.1.3
 
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
@@ -37,9 +39,15 @@ jobs:
       - run:
           name: Clean build and execute test
           command: mvn clean test -Denvironment=test
+
+      - run:
+          name: generating allure report
+          command: allure generate --clean
+          when: always
+
       #copy root directory
       - store_artifacts:
-          path: .
+          path: allure-report
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
