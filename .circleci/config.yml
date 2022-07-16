@@ -16,6 +16,8 @@ jobs:
     docker:
       - image: cimg/openjdk:11.0
 
+    parallelism: 4
+
     working_directory: ~/be-test-challenge
 
     parameters:
