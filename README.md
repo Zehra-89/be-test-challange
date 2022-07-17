@@ -43,7 +43,8 @@ allure serve allure-results
 ## Allure Report
 Allure Report is a flexible multi-language test report tool to show you a detailed representation of what has been tested.
 
-
+### Known Issues 
+CircleCi Parallelism 
 
 
 
