@@ -58,7 +58,7 @@ public class UsersAPITest {
     @Epic("Users API Tests")
     @Story("Search for Valid User Name")
     @Description("Verify given user name is present in the user api response")
-    public void verifyGivenNameIsPresent(String userName) {
+    public void verifyUniqueRecordIsPresentForGivenUserName(String userName) {
         Response userResponse = UsersEndpoints.getUser(userName);
         List<User> users = Arrays.asList(userResponse.getBody().as(User[].class));
         Assert.assertEquals("Searched data not found in response: " + userName, 1, users.size());
