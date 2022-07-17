@@ -11,9 +11,9 @@
             <class name="users.UsersAPITest">
                 <methods>
                     <include name="verifyUsersResponseIsNotNull"/>
-                    <include name="verifyUniqueRecordIsPresentForGivenUserName"/>
+                    <include name="verifyProvidedUserNameIsPresent"/>
                     <include name="verifyUserIdIsNotNull"/>
-                    <include name="verifyGivenNameIsPresent"/>
+                    <include name="verifyUniqueRecordIsPresentForGivenUserName"/>
                     <include name="verifyUserDoesNotExistForInvalidUserName"/>
                 </methods>
             </class>

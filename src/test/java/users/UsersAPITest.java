@@ -37,11 +37,11 @@ public class UsersAPITest {
     @Epic("Users API Tests")
     @Story("Search for Valid User Name")
     @Description("Verify api should return response on giving valid user name")
-    public void verifyUniqueRecordIsPresentForGivenUserName() {
+    public void verifyProvidedUserNameIsPresent() {
         Response userResponse = UsersEndpoints.getUser(userName);
         userResponse.then().statusCode(200);
-        List<User> users = Arrays.asList(userResponse.getBody().as(User[].class));
-        Assert.assertEquals("Verify given user name is not found in users api response", 1, users.size());
+        User user= Arrays.asList(userResponse.getBody().as(User[].class)).get(0);
+        Assert.assertEquals("Given user name is not found in users api response", userName,user.getUsername());
     }
 
     @Test
