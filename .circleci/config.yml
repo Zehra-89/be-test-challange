@@ -68,7 +68,7 @@ jobs:
       - run:
           name: Clean build and execute test
           command: |
-              TEST=$(circleci tests glob "src/__tests__/*.java" | circleci tests split --split-by=timings)
+              TEST=$(circleci tests glob "src/test/users/*.java" "src/test/posts/*.java" "src/test/comments/*.java" | circleci tests split --split-by=timings)
               mvn clean test -Denvironment=test $TEST
      
 
